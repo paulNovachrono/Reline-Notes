@@ -19,7 +19,7 @@ app.use(cors());
 app.use(express.json());
 
 // static file path
-app.use(express.static(path.join(__dirname, "..", "..", "frontend", "dist")));
+app.use(express.static(path.join(__dirname, "..", "public")));
 
 // api
 // create note

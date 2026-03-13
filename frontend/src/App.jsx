@@ -13,7 +13,7 @@ const App = () => {
   // get all notes
   const fetchNotes = () => {
     axios
-      .get("http://localhost:3000/api/notes")
+      .get("https://reline-notes.onrender.com/api/notes")
       .then((res) => setNotes(res.data.allNotes))
       .catch((err) => console.log(err));
   };
@@ -36,7 +36,7 @@ const App = () => {
 
     if (editingNoteId) {
       axios
-        .patch(`http://localhost:3000/api/notes/${editingNoteId}`, {
+        .patch(`https://reline-notes.onrender.com/api/notes/${editingNoteId}`, {
           title: newTitle,
           description: newDescription,
         })
@@ -49,7 +49,7 @@ const App = () => {
     }
 
     axios
-      .post("http://localhost:3000/api/notes", {
+      .post("https://reline-notes.onrender.com/api/notes", {
         title: newTitle,
         description: newDescription,
       })
@@ -63,7 +63,7 @@ const App = () => {
   // Delete note
   const handelDeleteNote = (noteId) => {
     axios
-      .delete(`http://localhost:3000/api/notes/${noteId}`)
+      .delete(`https://reline-notes.onrender.com/api/notes/${noteId}`)
       .then((res) => {
         console.log(res.data);
         fetchNotes();

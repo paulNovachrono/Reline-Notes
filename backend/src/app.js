@@ -72,9 +72,7 @@ app.delete("/api/notes/:id", async (req, res) => {
 
 // fallback route (must be last)
 app.get("*name", (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "..", "..", "frontend", "dist", "index.html"),
-  );
+  res.sendFile(path.join(__dirname, "..", "public", "index.html"));
 });
 
 export default app;
